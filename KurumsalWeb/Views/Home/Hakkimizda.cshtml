@@ -1,0 +1,258 @@
+﻿
+@model KurumsalWeb.Models.Model.Hakkimizda
+
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Hakkımızda</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Hakkımızda</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End About Us Section -->
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="/Content/SiteLayout/assets/img/about.jpg" class="img-fluid img-box img-responsive" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0">
+                    <h3>Firmamız: Teknolojiyle Geleceği Şekillendiriyoruz.</h3>
+                    <p class="fst-italic">
+                         @Html.Raw(Model.Aciklama)
+                        @*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.*@
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check2-circle"></i> Kullanıcı deneyimini ön planda tutarak, iOS ve Android platformlarında yüksek performanslı mobil uygulamalar oluşturuyoruz.</li>
+                        <li><i class="bi bi-check2-circle"></i> Modern, estetik ve işlevsel web siteleri tasarlayarak, dijital varlığınızı güçlendiriyoruz..</li>
+                        @*<li><i class="bi bi-check2-circle"></i> Veri analizi, otomasyon ve makine öğrenimi alanlarında akıllı sistemler tasarlıyoruz..</li>*@
+                    </ul>
+                    <p>
+                        Bizimle çalışarak, teknolojinin sunduğu tüm imkanlardan en iyi şekilde faydalanabilir, 
+                        iş süreçlerinizi daha verimli ve etkili hale getirebilirsiniz. Yenilikçi çözümlerimizle sizlere en iyi hizmeti sunmak için buradayız.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Facts Section ======= -->
+    <section class="facts section-bg" data-aos="fade-up">
+        <div class="container">
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="72" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Müşteriler</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Projeler</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Destek Saatleri</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Çalışkanlar</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Facts Section -->
+    <!-- ======= Clients Section ======= -->
+    <section class="clients" data-aos="fade-up">
+        <div class="container" data-aos="fade-up" data-aos-delay="100" data-no-editable="true">
+
+            <div class="swiper clients-swiper">
+                <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      },
+                      "breakpoints": {
+                        "320": {
+                          "slidesPerView": 2,
+                          "spaceBetween": 40
+                        },
+                        "480": {
+                          "slidesPerView": 3,
+                          "spaceBetween": 60
+                        },
+                        "640": {
+                          "slidesPerView": 4,
+                          "spaceBetween": 80
+                        },
+                        "992": {
+                          "slidesPerView": 6,
+                          "spaceBetween": 120
+                        }
+                      }
+                    }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="/Content/SiteLayout/assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Clients Section -->
+    <!-- ======= Our Skills Section ======= -->
+    <section class="skills" data-aos="fade-up">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Becerilerimiz</h2>
+                <p> Bizimle iş birliği yaptığınızda, uzmanlık alanlarımızın genişliği ve derinliği sayesinde projelerinizin her aşamasında profesyonel destek alırsınız. İşte bizlerin öne çıkan becerilerimiz.</p>
+            </div>
+
+            <div class="skills-content">
+
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">HTML <i class="val">100%</i></span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">Web Tasarımı <i class="val">95%</i></span>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">CSS <i class="val">90%</i></span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">Yapay Zeka <i class="val">80%</i></span>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">JavaScript <i class="val">75%</i></span>
+                    </div>
+                </div>
+
+
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">Photoshop <i class="val">55%</i></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Our Skills Section -->
+    <!-- ======= Tetstimonials Section ======= -->
+    <section class="testimonials" data-aos="fade-up">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Aile Üyelerimiz</h2>
+                <p>Başarı, ekip çalışmasının ve özverinin meyvesidir. Her bir çalışanımız, bu yolculukta önemli bir tanıktır ve katkısı paha biçilmezdir</p>
+            </div>
+
+            <div class="testimonials-carousel swiper">
+                <div class="swiper-wrapper">
+                    <div class="testimonial-item swiper-slide">
+                        <img src="~/Content/SiteLayout/assets/img/testimonials/profilee.jpg" class="testimonial-img" alt="">
+                        <h3>Yusuf Yasin Kaya</h3>
+                        <h4>Ceo &amp; Kurucu</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Şirketimizin başarısı, herkesin ortak hedefe ulaşmak için gösterdiği özveri ve çalışma azmi sayesinde gerçekleşti. Ekip arkadaşlarımın her biri bu başarıda kritik bir rol oynamaktadır.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item swiper-slide">
+                        <img src="~/Content/SiteLayout/assets/img/testimonials/profil.jpg" class="testimonial-img" alt="">
+                        <h3>Sezai Sancar</h3>
+                        <h4>Tasarımcı</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Her projede yenilikçi tasarımlar ve mükemmeliyet hedeflerimiz doğrultusunda çalışarak, müşterilerimize en iyi hizmeti sunmayı amaçlıyoruz. Ekip çalışması bu hedeflere ulaşmamızda bize güç katıyor.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item swiper-slide">
+                        <img src="~/Content/SiteLayout/assets/img/testimonials/profil.jpg" class="testimonial-img" alt="">
+                        <h3>Sezai Sancar</h3>
+                        <h4>İş Ortağı</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Serbest çalıştığım projelerde, ekip üyelerinin desteğiyle yüksek kaliteli sonuçlar elde ediyorum. İşbirliği ve yaratıcı çözümler, projelerin başarısının anahtarıdır.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item swiper-slide">
+                        <img src="/Content/SiteLayout/assets/img/testimonials/profilee.jpg" class="testimonial-img" alt="">
+                        <h3>Yusuf Yasin Kaya</h3>
+                        <h4>Girişimci</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Girişimcilik yolculuğunda, ekibimizin her bireyinin katkısı paha biçilmez. Her gün yeni fırsatlar ve zorluklarla karşılaşırken, birlikte çalışmak bizi güçlendiriyor.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item swiper-slide">
+                        <img src="/Content/SiteLayout/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>Yusuf Yasin Kaya</h3>
+                        <h4>Serbest Çalışan</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Ekip olarak, stratejik pazarlama yaklaşımlarımızla markamızı güçlendiriyoruz. Herkesin katkısı ve yaratıcı fikirleri, bizi daha ileriye taşıyor.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Ttstimonials Section -->
+
+</main>

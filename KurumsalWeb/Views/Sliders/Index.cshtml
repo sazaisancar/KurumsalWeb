@@ -1,0 +1,54 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h2>Slider</h2>
+
+        <p>
+            <a href="/Sliders/Create/" class="btn btn-default" > Yeni Slider Ekle </a>
+            @*@Html.ActionLink("Yeni Slider Ekle", "Create")*@
+        </p>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Baslik)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Aciklama)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ResimURL)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Baslik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aciklama)
+                    </td>
+                    <td>
+                       <img src="@item.ResimURL" width="250" height=" 150" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.SliderId }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.SliderId }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.SliderId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</main>

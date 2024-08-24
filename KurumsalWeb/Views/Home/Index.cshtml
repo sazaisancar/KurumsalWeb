@@ -1,0 +1,137 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+    ViewBag.Title = "AnaSayfa";
+}
+<section id="hero" class="d-flex justify-cntent-center align-items-center">
+
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        @{
+
+            Html.RenderAction("SliderPartial", "Home");
+
+
+        }
+
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        </a>
+
+    </div>
+</section>
+@*End Hero*@
+
+<main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="icon-box icon-box-pink">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4 class="title"><a href="">Yenilikçi Tasarımlar</a></h4>
+                        <p class="description">Modern ve kullanıcı dostu tasarımlarımızla projelerinizi daha etkili ve çekici hale getirin.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box icon-box-cyan">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4 class="title"><a href="">Detaylı Analizler</a></h4>
+                        <p class="description">Veri odaklı yaklaşımımızla projelerinizi kapsamlı bir şekilde analiz ederek, başarıya ulaşmanıza yardımcı oluyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box icon-box-green">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4 class="title"><a href="">Hızlı Performans</a></h4>
+                        <p class="description">Performans odaklı çözümlerimizle, yüksek hızda ve verimli çalışarak rakiplerinizin önünde olmanızı sağlıyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box icon-box-blue">
+                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <h4 class="title"><a href="">Global Erişim</a></h4>
+                        <p class="description">Dünya genelinde erişilebilirlik sunarak, projelerinizi geniş bir kitleye ulaştırmanıza yardımcı oluyoruz</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 video-box">
+                    <img src="/Content/SiteLayout/assets/img/why-us.jpg" class="img-fluid" alt="">
+                    <a href="https://www.instagram.com/p/C9p-Bn9usw9/" class="venobox play-btn mb-4"   target="_blank" data-vbtype="video" data-autoplay="true"></a>
+                </div>
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                        <h4 class="title"><a href="">Güvenli Kimlik Doğrulama</a></h4>
+                        <p class="description">Kullanıcı güvenliğini ön planda tutarak, kimlik doğrulama süreçlerini en yüksek standartlarda sunuyoruz.</p>
+                    </div>
+
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-gift"></i></div>
+                        <h4 class="title"><a href="">Özel Teklifler ve Fırsatlar</a></h4>
+                        <p class="description">Müşterilerimize özel teklifler ve fırsatlar sunarak, onların deneyimlerini daha keyifli hale getiriyoruz.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Why Us Section -->
+    <!-- ======= Features Section ======= -->
+
+
+    <section class="features">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Hizmetlerimiz</h2>
+                <p>
+                    Yazılım hizmetlerinizi ve çözümlerinizi profesyonel bir şekilde tanıtır ve potansiyel müşterilere her bir hizmetin detaylarını sunar.
+
+                </p>
+            </div>
+            @foreach (var item in ViewBag.Hizmetler)
+            {
+                <div class="row" data-aos="fade-up">
+                    <div class="col-md-5">
+                        <img src="@item.ResimURL" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <h3> @item.Baslık</h3>
+                        <p class="fst-italic">
+                            @item.Aciklama
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check"></i> Size özel uygulamalar.</li>
+                            <li><i class="bi bi-check"></i> Platformlar ve sistemlerle iş süreçlerinizi optimize ediyoruz.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            }
+        </div>
+    </section> @*End Features Section*@
+
+</main><!-- End #main -->

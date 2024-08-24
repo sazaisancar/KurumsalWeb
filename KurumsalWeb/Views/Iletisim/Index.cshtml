@@ -1,0 +1,71 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Iletisim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">     
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Whatsapp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Facebook)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Twitter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Instagram)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Whatsapp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Facebook)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Twitter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Instagram)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.IletisimId }) 
+                        <!--   @Html.ActionLink("Details", "Details", new { id = item.IletisimId }) |-->
+                        <!--   @Html.ActionLink("Delete", "Delete", new { id = item.IletisimId })-->
+                    </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </main>

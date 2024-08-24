@@ -1,0 +1,17 @@
+﻿
+
+
+@model  IEnumerable<KurumsalWeb.Models.Model.Kategorii>
+
+<ul>
+
+    @foreach (var item in Model)
+    {
+        @*<li><a href="/Home/Blog/@item.KategoriID">@item.KategoriAd <span>(@item.Blogs.Count())</span></a></li>*@
+
+        <li><i  class="icon-angle-right"></i><a   href="/Home/KategoriBlog/@item.KategoriID">@item.KategoriAd </a> <span>(@item.Blogs.Count())</span></li>
+
+    }
+
+
+</ul>

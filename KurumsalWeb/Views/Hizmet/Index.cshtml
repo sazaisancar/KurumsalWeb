@@ -1,0 +1,49 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Hizmet>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml";
+}
+
+<main id="main" class="main">
+    <h2>Hizmetler</h2>
+
+    <!-- Yeni Hizmet ekleme bağlantısı -->
+    <a class="btn btn-default" href="/Hizmet/Create/">Yeni Ekle</a>
+
+    <!-- Hizmetlerin listeleneceği tablo -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Resim URL</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <!-- Hizmetin ID'si -->
+                    <td>@item.HizmetId</td>
+
+                    <!-- Hizmetin başlığı -->
+                    <td>@item.Baslık</td>
+
+                    <!-- Hizmetin açıklaması, HTML içeriği olduğu için Raw kullanılır -->
+                    <td>@Html.Raw(item.Aciklama)</td>
+
+                    <!-- Hizmetin resmini gösterir, boyutları ayarlanmış -->
+                    <td><img width="150" height="150" src="@item.ResimURL" alt="Hizmet Resmi" /></td>
+
+                    <!-- Düzenle ve Sil işlemleri için bağlantılar -->
+                    <td>
+                        <a href="/Hizmet/Edit/@item.HizmetId">Düzenle</a> |
+                        <a href="/Hizmet/Delete/@item.HizmetId">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

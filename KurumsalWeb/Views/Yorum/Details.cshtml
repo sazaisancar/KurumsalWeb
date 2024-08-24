@@ -1,0 +1,68 @@
+﻿@model KurumsalWeb.Models.Model.Yorum
+
+@{
+    ViewBag.Title = "Details"; // Sayfanın başlığını "Details" olarak ayarlıyoruz.
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml"; // Sayfanın genel düzenini belirlemek için kullanılan layout dosyası.
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Yorum Detay</h2> <!-- Sayfanın ana başlığı: "Yorum Detay" -->
+        <h4>Yorum</h4> <!-- Alt başlık: "Yorum" -->
+        <hr /> <!-- Başlıklar arasında bir ayırıcı çizgi -->
+        <!-- Detayları düzenli bir şekilde göstermek için "description list" kullanıyoruz -->
+        <dl class="dl-horizontal">
+            <!-- Blog başlığını göstermek için, Yorum modelinin Blog özelliği mevcut olmalıdır. -->
+            <dt>
+                @Html.DisplayNameFor(model => model.Blog.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Blog.Baslik)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AdSoyad)
+                <!-- "AdSoyad" özelliği için başlık (label). -->
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AdSoyad)
+                <!-- "AdSoyad" özelliğinin değerini gösteriyoruz. -->
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Eposta)
+                <!-- "Eposta" özelliği için başlık (label). -->
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Eposta)
+                <!-- "Eposta" özelliğinin değerini gösteriyoruz. -->
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+                <!-- "Icerik" özelliği için başlık (label). -->
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+                <!-- "Icerik" özelliğinin değerini gösteriyoruz. -->
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Onay)
+                <!-- "Onay" özelliği için başlık (label). -->
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Onay)
+                <!-- "Onay" özelliğinin değerini gösteriyoruz. -->
+            </dd>
+        </dl>
+
+        <p>
+            @Html.ActionLink("Güncelle", "Edit", new { id = Model.YorumId })
+            <!-- Yorumun düzenlenmesi için "Güncelle" bağlantısı. Modelin ID'si ile Edit aksiyonuna yönlendirir. -->
+            |
+            @Html.ActionLink("Geri Dön", "Index")
+            <!-- Yorum detay sayfasından ana listeye dönmek için "Geri Dön" bağlantısı. -->
+        </p>
+    </div>
+</main>

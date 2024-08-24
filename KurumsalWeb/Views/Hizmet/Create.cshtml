@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <!-- CKEditor'ü başlatmak için script -->
+        <script type="text/javascript">
+            CKEDITOR.replace("editor");
+        </script>
+        <h2>Hizmet Ekle</h2>
+        <div class="form">
+            <!-- Form başlangıcı, 'multipart/form-data' tipi ile dosya yüklemeyi destekler -->
+            <form class="form-horizontal" method="post" action="/Hizmet/Create/" enctype="multipart/form-data">
+                <!-- Başlık alanı -->
+                <div class="form-group">
+                    <label for="Baslık" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- Başlık girişi için input, minimum 5 karakter ve zorunlu alan -->
+                        <input class="form-control" id="Baslık" name="Baslık" minlength="5" type="text" required />
+                    </div>
+                </div>
+
+                <!-- Açıklama alanı -->
+                <div class="form-group">
+                    <label for="editor" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- CKEditor ile zengin metin düzenleme alanı -->
+                        <textarea id="editor" name="Aciklama" required class="ckeditor"></textarea>
+                    </div>
+                </div>
+
+                <!-- Resim yükleme alanı -->
+                <div class="form-group">
+                    <label for="ResimURL" class="control-label col-lg-2">Resim</label>
+                    <div class="col-lg-10">
+                        <!-- Dosya seçimi için input, sadece belirli uzantılar (.jpg, .png, .jpeg) kabul eder -->
+                        <input required type="file" class="form-control" name="ResimURL" accept=".jpg, .png, .jpeg" />
+                    </div>
+                </div>
+
+                <!-- Formu gönderme ve iptal etme butonları -->
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <!-- Kaydet butonu, formu gönderir -->
+                        <button class="btn btn-primary" type="submit"><a href="/Hizmet/Index/">kaydet</a></button>
+                        <!-- İptal butonu, ana sayfaya döner -->
+                        <a class="btn btn-default" href="/Hizmet/Index/">İptal</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

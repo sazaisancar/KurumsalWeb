@@ -1,0 +1,87 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Kimlik>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml";
+}
+<h2>
+    </h2>
+<main id="main" class="main">
+
+    <div class="pagetitle">
+
+        <p>
+            @Html.ActionLink("Yeni Ekle", "Create")
+        </p>
+        <table class="table table-bordered table-striped table-responsive-sm">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Keywords)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LogoURL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Unvan)
+                </th>
+                <th>
+                    İşlemler
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Keywords)
+                    </td>
+                    <td>
+                        @Html.Raw(item.Description)
+                    </td>
+                    <td>
+                        <img class="img-responsive" src="@item.LogoURL" style="max-width: 100%; height: auto;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unvan)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Güncelle", "Edit", new { id = item.KimlikId }, htmlAttributes: new { @class = "btn btn-custom" } )
+                        <style>
+                            .btn-custom {
+                                background-color: white; /* Arka plan rengi beyaz */
+                                color: #333; /* Metin rengi */
+                                border: 1px solid #ccc; /* Kenarlık rengi */
+                                padding: 10px 20px; /* Dolgu */
+                                font-size: 1.25rem; /* Yazı tipi boyutu */
+                                border-radius: 20px; /* Oval kenarlar için kenar yarıçapı */
+                                box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hafif gölge efekti */
+                                transition: box-shadow 0.3s ease, transform 0.3s ease; /* Geçiş efektleri */
+                            }
+
+                                .btn-custom:hover {
+                                  
+                                    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Hover durumunda gölge efektini artır */
+                                    transform: translateY(-1px)
+                                }
+                        </style>
+
+
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</main>

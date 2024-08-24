@@ -1,0 +1,78 @@
+﻿@model KurumsalWeb.Models.Model.Blog
+@{
+    // Sayfanın başlığını ve düzen düzenini ayarlıyoruz
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml"; // Sayfanın şablon düzenini belirtiyoruz
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <!-- Sayfanın başlık kısmı -->
+        <h2>Kategori Düzenle</h2>
+
+        <div class="form">
+            <!-- Formun başlangıcı -->
+            @using (Html.BeginForm("Edit", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                // Anti-forgery token ekliyoruz. Bu, formun güvenliğini sağlar ve CSRF (Cross-Site Request Forgery) saldırılarına karşı korur
+                @Html.AntiForgeryToken();
+
+                <!-- Başlık giriş alanı -->
+                <div class="form-group">
+                    <label for="Baslik" class="control-label col-lg-2"> Başlık <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- Başlık için giriş kutusu. Burada mevcut başlık değeri modelden alınıyor -->
+                        <input class="form-control" id="Baslik" name="Baslik" minlength="5" type="text" required value="@Model.Baslik" />
+                    </div>
+                </div>
+
+                <!-- Kategori seçim alanı -->
+                <div class="form-group">
+                    <label for="KategoriID" class="control-label col-lg-2"> Kategori <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- Kategori seçim listesi. Burada kullanılarak kategori seçimi yapılabilir -->
+                        @Html.DropDownList("KategoriID", ViewBag.KategoriList as SelectList, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <!-- İçerik metni alanı -->
+                <div class="form-group">
+                    <label for="Icerik" class="control-label col-lg-2"> İçerik <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- İçerik için textarea. CKEditor gibi bir zengin metin editörü ile içerik düzenlemesi yapılabilir -->
+                        <textarea class="ckeditor" name="Icerik">@Model.Icerik</textarea>
+                    </div>
+                </div>
+
+                <!-- Mevcut resim görüntüleme alanı -->
+                <div class="form-group">
+                    <label for="CurrentImage" class="control-label col-lg-2"> Önceki Resim <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- Mevcut resim gösterimi. Modelden alınan URL ile resmi görüntüler -->
+                        <img src="@Model.ResimURL" width="150" height="100" />
+                    </div>
+                </div>
+
+                <!-- Yeni resim yükleme alanı -->
+                <div class="form-group">
+                    <label for="ResimURL" class="control-label col-lg-2"> Resim <span class="required">*</span></label>
+                    <div class="col-lg-10">
+                        <!-- Kullanıcıdan yeni bir resim dosyası yüklemesi için dosya seçme girişi -->
+                        <input type="file" class="form-control" name="ResimURL" accept=".jpg, .png, .jpeg" />
+                    </div>
+                </div>
+
+                <!-- Formun alt kısmı, gönderim ve iptal düğmeleri -->
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <!-- Formu göndermek için düğme -->
+                        <button class="btn btn-primary" type="submit">Güncelle</button>
+                        <!-- İptal etmek ve blog liste sayfasına dönmek için düğme -->
+                        <button class="btn btn-default" type="button" onclick="window.location.href='/Blog/Index/'">İptal</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</main>

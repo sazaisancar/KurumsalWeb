@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<KurumsalWeb.Models.Model.Blog>
+
+@foreach (var item in Model)
+{
+
+    
+    <div class="sidebar-item recent-posts">
+        <div class="post-item clearfix">
+            <img src="@item.ResimURL" alt="@item.Baslik" />
+            <h4><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></h4>
+            <time datetime="2024-04-01">Jan 1, 2024</time>
+        </div>
+
+        
+    </div><!-- End sidebar recent posts-->
+
+
+
+}
+

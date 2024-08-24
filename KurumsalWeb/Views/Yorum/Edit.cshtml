@@ -1,0 +1,97 @@
+﻿@model KurumsalWeb.Models.Model.Yorum
+
+@{
+    ViewBag.Title = "Edit"; // Sayfanın başlığını "Edit" olarak ayarlama
+    Layout = "~/Views/Shared/_AdminLayoutt.cshtml"; // Sayfanın genel düzenini belirlemek için kullanılan layout dosyası.
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <!-- Formun başlangıcı. Aşağıdaki form "Edit" aksiyonuna ve "Yorum" kontrolcüsüne post edilecek. -->
+        @using (Html.BeginForm("Edit", "Yorum", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken() // Cross-Site Request Forgery (CSRF) saldırılarına karşı koruma için bir token ekliyoruz.
+
+            <div class="form-horizontal">
+                <h2>Yorum Onaylama</h2> <!-- Sayfanın başlığı: Yorum Onaylama -->
+                <h4>Yorum</h4>
+                <hr /> <!-- Başlıklar arasında bir ayırıcı çizgi -->
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <!-- Modeldeki doğrulama hatalarını listeleyen bir özet. Hatalar varsa, "text-danger" sınıfı ile kırmızı renkte gösterir. -->
+
+                @Html.HiddenFor(model => model.YorumId)
+                <!-- Gizli bir alan oluşturuyoruz, böylece yorumun ID'si form ile gönderilir. -->
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdSoyad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <!-- "AdSoyad" özelliği için etiket. "control-label col-md-2" sınıfları, etiketin görünümünü ve hizalamasını belirler. -->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                        <!-- "AdSoyad" özelliği için bir giriş kutusu oluşturuyoruz. "form-control" sınıfı, Bootstrap ile uyumlu görünmesini sağlar. -->
+                        @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+                        <!-- "AdSoyad" özelliği için doğrulama mesajı. Hata varsa, "text-danger" sınıfı ile kırmızı renkte gösterilir. -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Eposta, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <!-- "Eposta" özelliği için etiket -->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Eposta, new { htmlAttributes = new { @class = "form-control" } })
+                        <!-- "Eposta" özelliği için bir giriş kutusu -->
+                        @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger" })
+                        <!-- "Eposta" özelliği için doğrulama mesajı -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Icerik, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <!-- "Icerik" özelliği için etiket -->
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Icerik, new { htmlAttributes = new { @class = "form-control" } })
+                        <!-- "Icerik" özelliği için bir metin alanı -->
+                        @Html.ValidationMessageFor(model => model.Icerik, "", new { @class = "text-danger" })
+                        <!-- "Icerik" özelliği için doğrulama mesajı -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Onay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <!-- "Onay" özelliği için etiket -->
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.Onay)
+                            <!-- "Onay" özelliği için bir onay kutusu -->
+                            @Html.ValidationMessageFor(model => model.Onay, "", new { @class = "text-danger" })
+                            <!-- "Onay" özelliği için doğrulama mesajı -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BlogId, "Blog", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <!-- "BlogId" özelliği için etiket, "Blog" olarak özel bir etiket adı kullanılmış -->
+                    <div class="col-md-10">
+                        @Html.DropDownList("BlogId", (SelectList)ViewBag.BlogList, htmlAttributes: new { @class = "form-control" })
+                        <!-- "BlogId" için bir açılır liste oluşturuyoruz. "ViewBag.BlogList" içerisindeki blog verileri ile doldurulur. -->
+                        @Html.ValidationMessageFor(model => model.BlogId, "", new { @class = "text-danger" })
+                        <!-- "BlogId" özelliği için doğrulama mesajı -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Güncelle" class="btn btn-default" />
+                        <!-- Formu gönderir ve "Güncelle" düğmesi ile yorum üzerinde değişiklik yapar. -->
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Geri Dön", "Index")
+            <!-- "Geri Dön" bağlantısı ile kullanıcıyı "Index" aksiyonuna yönlendiriyoruz. -->
+        </div>
+    </div>
+</main>

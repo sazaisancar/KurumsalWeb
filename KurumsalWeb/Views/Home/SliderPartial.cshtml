@@ -1,0 +1,148 @@
+﻿
+@model IEnumerable<KurumsalWeb.Models.Model.Slider>
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sayfası Başlığı</title>
+    <style>
+        /* Genel Stil Ayarları */
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif; /* Genel font ayarı */
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh; /* Ekranın tamamını kaplar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden; /* İçerik taşmasını engeller */
+            background-color: #254758; /* Arka plan rengi, görsel yoksa kullanılacak */
+        }
+
+            #hero .hero-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('path-to-your-background-image.jpg') no-repeat center center; /* Arka plan görseli */
+                background-size: cover; /* Görselin arka planı kaplaması */
+                z-index: -1; /* İçerikten arka planda kalır */
+            }
+
+        #heroCarousel {
+            width: 100%;
+            max-width: 1200px; /* Maksimum genişlik */
+            position: relative;
+            z-index: 1; /* İçerik arka planın üstünde olacak */
+        }
+
+        .carousel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ekranın tamamını kaplar */
+            color: #fff; /* Metin rengini beyaz yapar */
+            text-align: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            z-index: 1; /* İçerik arka planın üstünde olacak */
+        }
+
+            .carousel-container h3 {
+                margin-top: 0; /* Üst marjı kaldırır */
+                font-size: 2rem; /* Başlık boyutu */
+            }
+
+            .carousel-container img {
+                width: 550px; /* Resim genişliği */
+                height: 300px; /* Resim yüksekliği */
+                object-fit: cover; /* Resim boyutlandırma yöntemi */
+                border-radius: 8px; /* Köşeleri yuvarlatır */
+                margin: 20px 0; /* Üst ve alt marj */
+            }
+
+            .carousel-container p {
+                font-size: 1rem; /* Açıklama metni boyutu */
+                margin: 20px 0; /* Üst ve alt marj */
+            }
+
+        .btn-get-started {
+            background-color: #007bff; /* Buton arka plan rengi */
+            color: #fff; /* Buton metin rengi */
+            padding: 10px 20px; /* Buton iç padding */
+            border-radius: 5px; /* Buton köşe yuvarlama */
+            text-decoration: none; /* Alt çizgiyi kaldırır */
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Hover geçiş efekti */
+        }
+
+            .btn-get-started:hover {
+                background-color: #0056b3; /* Hover rengi değişimi */
+            }
+
+        /* Carousel Controls */
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #fff; /* Kontrol ikonlarının rengini beyaz yapar */
+        }
+
+        .carousel-control-next-icon {
+            background-image: url('path-to-your-next-icon.png'); /* İkon resmi */
+            background-size: 100%; /* İkonun boyutlandırılması */
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="hero-bg"></div> <!-- Arka plan görseli -->
+        <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            @{
+                var isFirst = true;
+            }
+            @foreach (var item in Model)
+            {
+                <div class="carousel-item @(isFirst ? "active" : "") d-flex align-items-center justify-content-center">
+                    <div class="carousel-container">
+                        <h3>@item.Baslik</h3>
+                        <img src="@item.ResimURL" alt="@item.Baslik" />
+                        <p>@item.Aciklama</p>
+                        <a href="/Home/Hizmetlerimiz/" class="btn-get-started animate__animated animate__fadeInUp">Devamını Oku</a>
+                    </div>
+                </div>
+                isFirst = false;
+            }
+        </div>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Sonraki</span>
+        </a>
+    </section>
+
+</body>
+</html>
+
+<!-- End Hero -->

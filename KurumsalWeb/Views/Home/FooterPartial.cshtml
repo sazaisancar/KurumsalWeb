@@ -1,0 +1,99 @@
+﻿<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Haber Bültenimiz</h4>
+                    <p>Bu bültenimizde sizlere en güncel haberleri, ilginç gelişmeleri ve önemli duyuruları sunmaktan mutluluk duyuyoruz.</p>
+                </div>
+                <div class="form-container">
+                    <form action="#" method="post">
+
+                        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                        <input type="submit" value="Abone Ol">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Kullanışlı Bağlantılar</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Index/">Ana Sayfa</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Blog/">Blog</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Iletisim/">İletişim</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Kullanım Şartları</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Gizlilik Politikası</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Tasarımı</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Geliştirme</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Ürün Yönetimi</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Pazarlama</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Grafik Tasarım</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Bize Ulaşın</h4>
+                    <br>
+                    @ViewBag.Iletisim.Adres
+                    <br>  </br>
+                    <strong>Tel:</strong>  @ViewBag.Iletisim.Telefon<br>
+                    <strong>Whatsapp:</strong>  @ViewBag.Iletisim.Whatsapp<br>
+                    <strong>Email:</strong> urfa@teknokent.harran.edu.tr<br>
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <h3>ICED Company HAKKINDA</h3>
+                    <p>
+                        Firmamız bir yazılım firması olmakla beraber mobil, web ve masaüstü alanlarında hizmet vermektedir. Ayrıca yapay zeka ve e-sağlık alanında da çalışmalarımız bulunmaktadır.
+                    </p>
+                    <div class="social-links mt-3" target="_blank" rel="noopener noreferrer">
+                        <a href="www.twitter.com/@ViewBag.Iletisim.Twitter" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="www.twitter.com/@ViewBag.Iletisim.Twitter" class="twitter"><i class="bx bxl-xing"></i></a>
+                        <a href="www.facebook.com/@ViewBag.Iletisim.Facebook" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        @*<a href="www.instagram.com/@ViewBag.Iletisim.Instagram/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>*@
+                        <a href="https://www.instagram.com/@ViewBag.Iletisim.Instagram/"   target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+
+
+
+                        <a href="https://www.linkedin.com/in/yusuf-yasin-kaya-82a753236/" class="linkedin" target="_blank" rel="noopener noreferrer">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            @DateTime.Now.Year &copy; Copyright <strong><span>ICED COMPANY</span></strong>. Tüm hakları saklıdır..
+        </div>
+        <div class="credits " target="_blank" rel="noopener noreferrer">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+            @*tarafından tasarlandı <a href="https://www.sanliurfateknokent.com.tr/firma-detay/iced-company" target="_blank" rel="noopener noreferrer">ICED COMPANY</a>*@
+        </div>
+    </div>
+</footer><!-- End Footer -->

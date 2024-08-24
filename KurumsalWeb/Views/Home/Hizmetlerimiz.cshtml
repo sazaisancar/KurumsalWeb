@@ -1,0 +1,190 @@
+﻿
+@model IEnumerable<KurumsalWeb.Models.Model.Hizmet>
+
+@{
+    ViewBag.Title = "Hizmetlerimiz";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= Our Services Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Hizmetlerimiz</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Hizmetlerimiz</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Our Services Section -->
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="icon-box icon-box-pink">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4 class="title"><a href="">Yenilikçi Tasarımlar</a></h4>
+                        <p class="description">Yaratıcı ve yenilikçi tasarımlarımızla, projelerinize benzersiz bir estetik katıyoruz. Modern ve etkileyici görsellerle markanızı öne çıkarın.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box icon-box-cyan">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4 class="title"><a href="">Profesyonel Danışmanlık</a></h4>
+                        <p class="description">Deneyimli danışmanlarımız, iş süreçlerinizi optimize etmek ve stratejik kararlar almak konusunda size en iyi çözümleri sunar.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box icon-box-green">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4 class="title"><a href="">Verimlilik Analizi</a></h4>
+                        <p class="description">İş süreçlerinizin etkinliğini değerlendirir ve performansınızı artırmak için özelleştirilmiş stratejiler sunarız.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box icon-box-blue">
+                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <h4 class="title"><a href="">Global Çözümler</a></h4>
+                        <p class="description">Uluslararası pazarda başarılı olmanızı sağlayacak çözümler sunarız. Küresel trendleri takip ederek işinizi büyütmenize yardımcı oluruz.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="container">
+
+            <div class="row">
+                <!-- Video Box -->
+                <div class="col-lg-6 video-box">
+                    <img src="/Content/SiteLayout/assets/img/why-us.jpg" class="img-fluid" alt="Neden Biz?">
+                    <a href="https://www.instagram.com/p/C9p-Bn9usw9/" class="venobox play-btn mb-4" target="_blank" data-vbtype="video" data-autoplay="true"  title="Video İle Tanışın" ></a>
+                    
+                </div>
+
+                <!-- Icon Boxes -->
+                <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+                    <!-- Icon Box 1 -->
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                        <h4 class="title"><a href="">Özel Çözümler</a></h4>
+                        <p class="description">Müşterilerimize özel, yüksek kaliteli ve kişiselleştirilmiş çözümler sunarak her projede en iyi sonuçları elde ediyoruz.</p>
+                    </div>
+
+                    <!-- Icon Box 2 -->
+                    <div class="icon-box">
+                        <div class="icon"><i class="bx bx-gift"></i></div>
+                        <h4 class="title"><a href="">Yaratıcı Paketler</a></h4>
+                        <p class="description">İhtiyacınıza uygun, yenilikçi ve yaratıcı paketler sunarak projelerinize değer katıyoruz. Her ayrıntıyı özenle tasarlıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section><!-- End Why Us Section -->
+    <!-- ======= Service Details Section ======= -->
+    <section class="service-details">
+        <div class="container">
+
+
+            <div class="row">
+
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="@item.ResimURL" alt="..."   class=" img-box img-responsive">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#">@item.Baslık</a></h5>
+                                <p class="card-text">@item.Aciklama</p>
+                                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i>Devamını oku</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                }
+
+          
+            </div>
+
+        </div>
+    </section><!-- End Service Details Section -->
+    <!-- ======= Pricing Section ======= -->
+    <section class="pricing section-bg" data-aos="fade-up">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Fiyatlandırma Planları</h2>
+                <p>İhtiyacınıza uygun esnek fiyatlandırma planlarımızı keşfedin. İster yeni başlıyor olun, ister büyümek isteyin, her ihtiyaca uygun seçeneklerimiz mevcut. Size uygun planı seçin ve hemen başlayın!</p>
+            </div>
+
+            <div class="row no-gutters">
+
+                <!-- Ücretsiz Plan -->
+                <div class="col-lg-4 box">
+                    <h3>Temel</h3>
+                    <h4>$0<span>aylık</span></h4>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Temel özelliklere erişim</li>
+                        <li><i class="bx bx-check"></i> 1 GB depolama</li>
+                        <li><i class="bx bx-check"></i> E-posta desteği</li>
+                        <li class="na"><i class="bx bx-x"></i> Öncelikli destek</li>
+                        <li class="na"><i class="bx bx-x"></i> Gelişmiş analizler</li>
+                    </ul>
+                    <a href="/Home/Iletisim/" class="get-started-btn">Ücretsiz Deneme Başlat</a>
+                </div>
+
+                <!-- Profesyonel Plan -->
+                <div class="col-lg-4 box featured">
+                    <h3>Profesyonel</h3>
+                    <h4>$29<span>aylık</span></h4>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Temel özelliklerin tümü</li>
+                        <li><i class="bx bx-check"></i> 10 GB depolama</li>
+                        <li><i class="bx bx-check"></i> Öncelikli destek</li>
+                        <li><i class="bx bx-check"></i> Gelişmiş analizler</li>
+                        <li><i class="bx bx-check"></i> Özelleştirilebilir seçenekler</li>
+                    </ul>
+                    <a href="/Home/Iletisim/" class="get-started-btn">Planı Seç</a>
+                </div>
+
+                <!-- Kurumsal Plan -->
+                <div class="col-lg-4 box">
+                    <h3>Kurumsal</h3>
+                    <h4>$49<span>aylık</span></h4>
+                    <ul>
+                        <li><i class="bx bx-check"></i> Profesyonel özelliklerin tümü</li>
+                        <li><i class="bx bx-check"></i> 50 GB depolama</li>
+                        <li><i class="bx bx-check"></i> 7/24 destek</li>
+                        <li><i class="bx bx-check"></i> Gelişmiş analizler</li>
+                        <li><i class="bx bx-check"></i> Özel hesap yöneticisi</li>
+                    </ul>
+                    <a href="/Home/Iletisim/" class="get-started-btn">Hemen Başla</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section><!-- End Pricing Section -->
+
+</main><!-- End #main -->
